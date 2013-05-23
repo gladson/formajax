@@ -1,0 +1,22 @@
+{% extends "contato/base_contato.html" %}
+{% load bootstrap_toolkit %}
+{% load staticfiles %}
+
+{% block js %}
+{% endblock %}
+{% block css %}
+<style type="text/css">
+    .errorlist {
+        margin-left: 0em;
+        list-style: none;
+        color: #b94a48;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<form class="form-signin" action="{% url 'contato' %}" method="post">{% csrf_token %}
+    <h2 class="form-signin-heading">Cadastro Contato</h2>
+    {{ form|as_bootstrap }}
+    <input class="btn btn-large btn-primary btn-form-signin" type="submit" value="Salvar">
+</form>
+{% endblock %}
